@@ -4,21 +4,43 @@ import Image from "next/image"
 
 export default function Admin(){
 
-    const[nome, setNome] = useState("")
     const[descricao, setDescricao] = useState("")
+    const [categoria, setCategoria] = useState("")
     const[preco, setPreco] = useState("")
     const[imagem, setImagem] = useState("")
 
-    function selecionarImagem(e: React.ChangeEvent<HTMLInputElement>){
+    /*function selecionarImagem(e: React.ChangeEvent<HTMLInputElement>){
         const arquivo = e.target.files?.[0]
 
         if(arquivo){
             setImagem(URL.createObjectURL(arquivo))
         }
-    }
+    }*/
 
-    async function cadastrarLanche() {
-        alert("Cadastro de lanche")   
+    async function cadastrarLanche(e:any) {
+
+        e.preventDefault()
+        
+        try {
+            const response = await fetch("http://localhost:3001/produto",{
+                method:"POST",
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    descricao,
+                    categoria,
+                    preco,
+                    imagem
+                })
+
+            })
+
+            alert("Produto cadastrado com sucesso")
+        } catch (error) {
+            console.log(error)
+            alert("Erro")
+        }
     }
 
     return(
@@ -28,20 +50,20 @@ export default function Admin(){
 
                 <form onSubmit={cadastrarLanche} className="space-y-5">
                     <div>
-                        <label className="text-black">Nome</label>
-                        <input type="text"
-                        value={nome}
-                        onChange={(e)=> setNome(e.target.value)}
-                        placeholder="Escreva o nome do produto aqui..."
-                        className="w-full rounded border p-3 border-black"
-                        />
-
                         <label className="text-black">Descrição</label>
                         <input type="text"
                         value={descricao}
                         onChange={(e)=> setDescricao(e.target.value)}
                         placeholder="Escreva a descrição do produto aqui..."
-                        className="w-full rounded border p-3 border-black"
+                        className="w-full rounded border p-3 border-black text-black"
+                        />
+
+                        <label className="text-black">Categoria</label>
+                        <input type="text"
+                        value={categoria}
+                        onChange={(e)=> setCategoria(e.target.value)}
+                        placeholder="Escreva o nome do produto aqui..."
+                        className="w-full rounded border p-3 border-black text-black"
                         />
 
                         <label className="text-black">Preço</label>
@@ -49,15 +71,15 @@ export default function Admin(){
                         value={preco}
                         onChange={(e)=> setPreco(e.target.value)}
                         placeholder="Escreva o preço do produto aqui..."
-                        className="w-full rounded border p-3 border-black"
+                        className="w-full rounded border p-3 border-black text-black"
                         />
 
                         <label className="text-black">Imagem</label>
-                        <input type="file"
-                        accept="image/*"
-                        onChange={selecionarImagem}
+                        <input type="text"
+                        value={imagem}
+                         onChange={(e)=> setImagem(e.target.value)}
                         placeholder=""
-                        className="w-full rounded border p-3 border-black"
+                        className="w-full rounded border p-3 border-black text-black"
                         />
 
                         <button className="w-full bg-green-600 p-3 mt-4 rounded-2xl">
@@ -65,19 +87,8 @@ export default function Admin(){
                         </button>
                     </div>
 
-                    {imagem && (
-                        <div>
-                            <p className="mb-2 font-medium mx-auto text-black justify-center flex">Prévia</p>
-
-                            <Image
-                            src={imagem}
-                            alt="Prévia da imagem"
-                            width={200}
-                            height={200}
-                            className="mx-auto border-2 border-black rounded"
-                            />
-                        </div>
-                    )}
+                
+                    
                 </form>
             </div>
 

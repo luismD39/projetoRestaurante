@@ -9,20 +9,12 @@ export default function Admin(){
     const[preco, setPreco] = useState("")
     const[imagem, setImagem] = useState("")
 
-    /*function selecionarImagem(e: React.ChangeEvent<HTMLInputElement>){
-        const arquivo = e.target.files?.[0]
-
-        if(arquivo){
-            setImagem(URL.createObjectURL(arquivo))
-        }
-    }*/
-
     async function cadastrarLanche(e:any) {
 
         e.preventDefault()
         
         try {
-            const response = await fetch("http://localhost:3001/produto",{
+            const response = await fetch("http://localhost:3001/produtos",{
                 method:"POST",
                 headers:{
                     "Content-type":"application/json"
@@ -78,7 +70,7 @@ export default function Admin(){
                         <input type="text"
                         value={imagem}
                          onChange={(e)=> setImagem(e.target.value)}
-                        placeholder=""
+                        placeholder="Cole o link da imagem aqui..."
                         className="w-full rounded border p-3 border-black text-black"
                         />
 
@@ -86,10 +78,11 @@ export default function Admin(){
                             Cadastrar lanche
                         </button>
                     </div>
-
-                
-                    
                 </form>
+
+                <div>
+
+                </div>
             </div>
 
         </main>

@@ -28,6 +28,10 @@ export default function Navbar(){
                         Fazer pedido
                     </Link>
 
+                    <Link href="/login" className="text-gray-700 hover:text-green-600 transition">
+                        Logar
+                    </Link>
+
                 </div>
                 
             </nav>

@@ -24,9 +24,6 @@ export default function Navbar(){
                     <Link href="/sobre" className="text-gray-700 hover:text-green-600 transition">  
                     Sobre nós
                     </Link>
-                    <Link href="/pedido" className="text-gray-700 hover:text-green-600 transition">
-                        Fazer pedido
-                    </Link>
 
                     <Link href="/login" className="text-gray-700 hover:text-green-600 transition">
                         Logar

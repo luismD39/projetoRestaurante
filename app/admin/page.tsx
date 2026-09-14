@@ -38,7 +38,7 @@ export default function Admin(){
     return(
         <main className="min-h-screen bg-amber-50 p-8">
             <div className="mx-auto max-w-xl rounded-lg bg-white p-8 shadow">
-                <h1 className="mb-6 text-3xl font-bold text-black justify-center mx-auto flex">Cadastrar lanche</h1>
+                <h1 className="mb-6 text-3xl font-bold text-black justify-center mx-auto flex">Cadastrar Prato</h1>
 
                 <form onSubmit={cadastrarLanche} className="space-y-5">
                     <div>
@@ -75,7 +75,7 @@ export default function Admin(){
                         />
 
                         <button className="w-full bg-green-600 p-3 mt-4 rounded-2xl">
-                            Cadastrar lanche
+                            Cadastrar
                         </button>
                     </div>
                 </form>

@@ -39,7 +39,7 @@ export default function CardapioPage(){
     }, [])
 
     return(
-        <main className="p-8 bg-amber-50 max-h-max">
+        <main className="p-8 bg-amber-50 min-h-screen">
             <h1 className="mb-6 text-3xl font-bold text-black">Cardapio</h1>
 
             {loading ? (<p>Carregando produtos...</p>) : (

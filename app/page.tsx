@@ -27,25 +27,17 @@ export default function Home() {
 
         <h1 className="text-2xl font-bold mb-3 text-black">Restaurante Legal</h1>
 
-        <input type="text"
-        placeholder="Digite a descrição."
-        className="text-black rounded-2xl border-2 m-1 w-3xs h-10 p-2" />
+        <a href="cardapio"
+        className="text-white p-3 mb-1 bg-green-600 rounded-2xl hover:bg-green-700">
+        Fazer pedido</a>
 
-        <input type="text"
-        placeholder="Digite a categoria"
-        className="text-black rounded-2xl border-2 m-1 w-3xs h-10 p-2" />
+        <a href="sobre"
+        className="text-white p-3 mb-1 bg-green-600 rounded-2xl hover:bg-green-700">
+        Sobre nós</a>
 
-        <input type="number"
-        placeholder="Digite o preço"
-        className="text-black rounded-2xl border-2 m-1 w-3xs h-10 p-2" />
-
-        <input type="text"
-        placeholder="Selecione a imagem"
-        className="text-black rounded-2xl border-2 m-1 w-3xs h-10 p-2" />
-
-        <button onClick={cadastrar} className="w-full h-10 bg-green-600 rounded-2xl cursor-pointer hover:bg-green-700">
-        Cadastrar
-        </button>
+        <a href="login"
+        className="text-white p-3 mb-1 bg-green-600 rounded-2xl hover:bg-green-700">
+        Logar</a>
 
       </div>
     </main>

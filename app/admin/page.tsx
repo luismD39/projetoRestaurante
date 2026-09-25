@@ -14,7 +14,7 @@ export default function Admin(){
         e.preventDefault()
         
         try {
-            const response = await fetch(`${process.env.API_URL}`,{
+            const response = await fetch(`${process.env.API_URL}/produtos`,{
                 method:"POST",
                 headers:{
                     "Content-type":"application/json"
@@ -28,11 +28,14 @@ export default function Admin(){
 
             })
 
-            alert("Produto cadastrado com sucesso")
+            if(response.ok){
+                alert("Produto cadastrado com sucesso")
+            }
         } catch (error) {
             console.log(error)
             alert("Erro")
         }
+
     }
 
     return(

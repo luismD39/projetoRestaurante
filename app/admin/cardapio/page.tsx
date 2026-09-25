@@ -19,7 +19,7 @@ export default function CardapioAdmin(){
     async function mostrarProdutos() {
         
         try {
-            const response = await fetch('http://localhost:3001/produtos')
+            const response = await fetch(`${process.env.API_URL}`)
             const data = await response.json()
 
             if(!response.ok){
@@ -51,7 +51,7 @@ export default function CardapioAdmin(){
         }
         
         try {
-            const response = await fetch(`http://localhost:3001/produtos/${id}`, {
+            const response = await fetch(`${process.env.API_URL}/produtos/${id}`, {
                 method:"DELETE"
             })
 

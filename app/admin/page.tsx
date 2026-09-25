@@ -14,7 +14,7 @@ export default function Admin(){
         e.preventDefault()
         
         try {
-            const response = await fetch(`${process.env.API_URL}/produtos`,{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produtos`,{
                 method:"POST",
                 headers:{
                     "Content-type":"application/json"

@@ -19,7 +19,7 @@ export default function CardapioPage(){
         
         try {
             const response = await fetch(
-                `${process.env.API_URL}/produtos`
+                `${process.env.NEXT_PUBLIC_API_URL}/produtos`
             )
             const data = await response.json()
 

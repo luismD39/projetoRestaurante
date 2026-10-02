@@ -84,7 +84,7 @@ export default function CardapioAdmin(){
     }, [])
 
     return(
-        <main className="p-8 bg-amber-50">
+        <main className="p-8 bg-amber-50 min-h-screen">
             <h1 className="mb-6 text-3xl font-bold text-black">Gerenciar cardápio</h1>
 
             {loading ? (<p>Carregando produtos...</p>) : (

@@ -34,12 +34,12 @@ export default function Login(){
 
     return(
         <main className="flex min-h-screen items-center justify-center bg-amber-50">
-            <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow">
-                <h1 className="mb-8 text-center font-bold text-black">Área administrativa</h1>
+            <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow border-2 border-black">
+                <h1 className="mb-8 text-center font-bold text-black text-2xl">Área administrativa</h1>
                 
                 <p className="mb-8 text-center text-black">Faça login para acessar o painel</p>
 
-                <div>
+                <div className="">
                     <label className="text-black">Usuario</label>
                     <input type="text" 
                     placeholder="Digite o nome de usuário..."

@@ -25,7 +25,6 @@ export default function Admin(){
                     preco,
                     imagem
                 })
-
             })
 
             if(response.ok){

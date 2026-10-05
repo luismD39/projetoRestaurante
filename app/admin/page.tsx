@@ -17,7 +17,7 @@ export default function Admin(){
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produtos`,{
                 method:"POST",
                 headers:{
-                    "Content-type":"application/json"
+                    "Content-Type":"application/json"
                 },
                 body:JSON.stringify({
                     descricao,

@@ -13,7 +13,7 @@ export default function Cadastro(){
         e.preventDefault()
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produtos`,{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/registrar`,{
                 method:"POST",
                 headers:{
                     "Content-type": "application/json"
